@@ -4,8 +4,9 @@
 NAME=ConEmuLn
 DIRNAME=$(NAME)
 RELEASEDIR=..\..\Release\plugins\ConEmu\Lines
-#NEEDDEFLIB = 1
-USELIBCRT = 1
+NEEDENTRY = 1
+USE_PDB = 1
+NEEDDEFLIB = 1
 
 !include ../makefile_vc_defs
 
@@ -54,11 +55,11 @@ NOWIN98=/OPT:NOWIN98
 
 
 !ifndef DEBUG
-CPP_OPT=/DNDEBUG /O1i /Fd$(PDB) /DHIDE_TODO /DCRTSTARTUP
+CPP_OPT=/DNDEBUG /O1i /Fd$(PDB) /DHIDE_TODO
 LINK_DEBUG=/map:"$(MAP)" 
 CPP_DEBUG=
 !else
-CPP_OPT=/DDEBUG /Od /Fd$(PDB) /DCRTSTARTUP
+CPP_OPT=/DDEBUG /Od /Fd$(PDB)
 LINK_DEBUG=/debug /map:"$(MAP)" /pdb:"$(PDB)"
 CPP_DEBUG=/Zi
 !endif

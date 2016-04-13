@@ -755,7 +755,7 @@ struct Settings
 		bool isTabsInCaption;
 
 		// Tab theme properties
-		int ilDragHeight;
+		//int ilDragHeight; = 10
 
 		protected:
 		//reg->Load(L"TabsOnTaskBar", m_isTabsOnTaskBar);
@@ -1003,7 +1003,8 @@ struct Settings
 		//reg->Load(L"HideInactiveConsoleTabs", bHideInactiveConsoleTabs);
 		bool bHideInactiveConsoleTabs;
 
-		bool bHideDisabledTabs;
+		// L"HideDisabledTabs" -- is not saved
+		bool isHideDisabledTabs() { return false; };
 
 		//reg->Load(L"ShowFarWindows", bShowFarWindows);
 		bool bShowFarWindows;

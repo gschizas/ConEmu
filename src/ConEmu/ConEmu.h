@@ -193,7 +193,7 @@ class CConEmuMain
 		wchar_t ms_ConEmuC32Full[MAX_PATH+12];  // полный путь к серверу (ConEmuC.exe) с длинными именами
 		wchar_t ms_ConEmuC64Full[MAX_PATH+12];  // полный путь к серверу (ConEmuC64.exe) с длинными именами
 		LPCWSTR ConEmuCExeFull(LPCWSTR asCmdLine=NULL);
-		wchar_t *mpsz_ConEmuArgs;    // Аргументы
+		//wchar_t *mpsz_ConEmuArgs;    // Use opt.cmdLine, opt.cfgSwitches and opt.runCommand instead
 		void GetComSpecCopy(ConEmuComspec& ComSpec);
 		void CreateGuiAttachMapping(DWORD nGuiAppPID);
 		void InitComSpecStr(ConEmuComspec& ComSpec);
@@ -378,7 +378,7 @@ class CConEmuMain
 		DWORD m_FixPosAfterStyle;
 		RECT mrc_FixPosAfterStyle;
 		DWORD m_ProcCount;
-		BOOL mb_IsUacAdmin; // ConEmu itself is started elevated
+		bool mb_IsUacAdmin; // ConEmu itself is started elevated
 		bool IsActiveConAdmin();
 		HICON GetCurrentVConIcon();
 		HCURSOR mh_CursorWait, mh_CursorArrow, mh_CursorAppStarting, mh_CursorMove, mh_CursorIBeam;

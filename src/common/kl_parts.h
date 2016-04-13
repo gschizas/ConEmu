@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #if !defined(__GNUC__)
+#pragma warning(push)
 #pragma warning(disable: 4244) // convertion to lower size
 #pragma warning(disable: 4267) // conversion from 'size_t' to 'DWORD'
 #pragma warning(disable: 4146) // unary minus operator applied to unsigned type
@@ -19,7 +20,7 @@ typedef __int32 i32;
 typedef __int64 i64;
 typedef unsigned __int8 u8;
 typedef unsigned __int16 u16;
-typedef DWORD u32;
+typedef unsigned __int32 u32;
 typedef unsigned __int64 u64;
 typedef INT_PTR ssize_t;
 
@@ -49,3 +50,7 @@ __forceinline u32 __cdecl klMulDivU32(u32 a, u32 b, u32 c)
 	return (a*b/c);
 #endif
 }
+
+#if !defined(__GNUC__)
+#pragma warning(pop)
+#endif

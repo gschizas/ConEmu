@@ -44,3 +44,9 @@ help
 x64
 
 /CreateRelease.cmd
+
+Release/**/*.iobj
+Release/**/*.ipdb
+Release/**/*.iobj
+Release/**/*.exp
+Release/**/*.lib
